@@ -46,14 +46,14 @@ FW.Vow();
 Console.WriteLine();
 
 // 7
-Item item = new Item();
-item.Price = 100;
-item.Name = "potion";
+Item1 item = new Item1();
+item.Price1 = 100;
+item.Name1 = "potion";
 Console.WriteLine(item);
 Console.WriteLine();
 
 // 8
-Item potion = new();
+Item1 potion = new();
 Console.WriteLine(item);
 Console.WriteLine();
 
@@ -70,3 +70,69 @@ p2.Level = 8;
 
 Console.WriteLine(p1.ToString());
 Console.WriteLine(p2.ToString());
+Console.WriteLine();
+
+// 10
+Enemy[] enemies = new Enemy[3];  // class일 경우, 현재 배열 변수만 생성되고 배열 개체는 0개인 상태
+// struct일 경우, 배열 생성과 동시에 기본값으로 개체또한 생성됨
+
+enemies[0] = new Enemy();
+enemies[0].Name = "고블린";
+enemies[0].Health = 50;
+
+enemies[1] = new Enemy();
+enemies[1].Name = "오크";
+enemies[1].Health = 100;
+
+enemies[2] = new Enemy();
+enemies[2].Name = "드래곤";
+enemies[2].Health = 500;
+
+
+for (int i = 0; i < enemies.Length; i++)
+{
+    enemies[i].ShowInfo();
+}
+Console.WriteLine();
+
+// 11
+Item1[] items = new Item1[3]; // new.Item[]은 클래스에 한개의 배열 개체 생성. 현재 상태는 요소3개를 가진 배열 1개 변수를 만듦/
+
+items[0] = new Item1 { Name1 = "검", Price1 = 500 };
+items[1] = new Item1 { Name1 = "방패", Price1 = 300 };
+items[2] = new Item1 { Name1 = "포션", Price1 = 50 };
+
+
+Console.WriteLine("=== 인벤토리 ===");
+foreach (Item1 eyetem in items)
+{
+    Console.WriteLine(eyetem);
+}
+Console.WriteLine();
+
+// 12
+
+// 기존 방식
+Character c1 = new();
+c1.Name = "홍길동";
+c1.Level = 1;
+c1.Job = "전사";
+
+// Object Initializer   
+Character c2 = new Character
+{
+    Name = "이순신",
+    Level = 5,
+    Job = "궁수"
+};
+
+Console.WriteLine($"{c1.Name} - {c1.Job} Lv.{c1.Level}");
+Console.WriteLine($"{c2.Name} - {c2.Job} Lv.{c2.Level}");
+Console.WriteLine();
+
+// 13
+Student[] students = new Student[3]
+{
+    new Student { Name = "김철수", }
+}
+
