@@ -133,6 +133,25 @@ Console.WriteLine();
 // 13
 Student[] students = new Student[3]
 {
-    new Student { Name = "김철수", }
+    new Student { Name = "김철수", Score = 85},
+    new Student { Name = "이영희", Score = 92},
+    new Student { Name = "박민수", Score = 78}
+};
+
+for (int i = 0; i < students.Length; i++)
+{
+    Console.WriteLine(students[i].ToString());
 }
+
+foreach (Student student in students)  // foreach (Student 개체안의 
+{
+    Console.WriteLine(student);
+      
+}
+
+
+
+
+
+
 
